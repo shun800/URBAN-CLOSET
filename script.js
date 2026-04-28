@@ -4,12 +4,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* === ヘッダースクロール制御 === */
+  /* === ヘッダースクロール制御（全ページ共通） === */
   const header = document.querySelector('.header');
-  // index.htmlのみ透明ヘッダー動作（.heroがあるページ）
-  const isHomePage = !!document.querySelector('.hero');
 
-  if (header && isHomePage) {
+  if (header) {
     let scrollTimer = null;
 
     window.addEventListener('scroll', function() {
@@ -35,11 +33,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
   const mobileClose = document.querySelector('.mobile-menu-close');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => mobileMenu.classList.add('active'));
-    if (mobileClose) mobileClose.addEventListener('click', () => mobileMenu.classList.remove('active'));
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => mobileMenu.classList.remove('active'));
+  let isMenuOpen = false;
+
+  function openMenu() {
+    if (!mobileMenu) return;
+    isMenuOpen = true;
+    mobileMenu.classList.add('active');
+    if (mobileClose) mobileClose.classList.add('active');
+    if (hamburger) hamburger.style.display = 'none';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    if (!mobileMenu) return;
+    isMenuOpen = false;
+    mobileMenu.classList.remove('active');
+    if (mobileClose) mobileClose.classList.remove('active');
+    if (hamburger) hamburger.style.display = '';
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger) hamburger.addEventListener('click', openMenu);
+  if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', closeMenu);
     });
   }
 

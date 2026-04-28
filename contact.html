@@ -11,7 +11,7 @@
 <body>
 
   <!-- ヘッダー -->
-  <header class="header scrolled" id="header">
+  <header class="header" id="header">
     <a href="index.html" class="header-logo">URBAN CLOSET</a>
     <nav class="header-nav">
       <a href="products.html?filter=new">NEW</a><a href="products.html?filter=women">WOMEN</a><a href="products.html?filter=men">MEN</a>
@@ -26,8 +26,14 @@
 
   <div class="mobile-menu">
     <button class="mobile-menu-close">&times;</button>
-    <a href="products.html?filter=new">NEW</a><a href="products.html?filter=women">WOMEN</a><a href="products.html?filter=men">MEN</a>
-    <a href="products.html?filter=goods">GOODS</a><a href="story.html">STORY</a><a href="lookbook.html">LOOKBOOK</a><a href="contact.html">CONTACT</a>
+    <a href="index.html">HOME</a>
+    <a href="products.html?filter=new">NEW</a>
+    <a href="products.html?filter=women">WOMEN</a>
+    <a href="products.html?filter=men">MEN</a>
+    <a href="products.html?filter=goods">GOODS</a>
+    <a href="story.html">STORY</a>
+    <a href="lookbook.html">LOOKBOOK</a>
+    <a href="contact.html">CONTACT</a>
   </div>
 
   <!-- 検索バー -->
@@ -39,14 +45,14 @@
   </div>
 
   <!-- ページタイトル -->
-  <div class="page-title-wrap">
+  <div class="page-title-wrap" style="padding-top: 120px;">
     <h1 class="page-title fade-in">CONTACT</h1>
   </div>
 
   <!-- コンタクトエリア -->
   <div class="contact-wrap">
     <!-- 左：フォーム -->
-    <div class="fade-in">
+    <div class="contact-form-col fade-in">
       <form id="contact-form">
         <div class="form-group">
           <label class="form-label" for="name">NAME *</label>
@@ -77,9 +83,9 @@
       </form>
     </div>
 
-    <!-- 右：FAQ + SNS -->
-    <div class="fade-in">
-      <h2 class="section-title" style="font-size: clamp(24px, 4vw, 40px); margin-bottom: 32px;">FAQ</h2>
+    <!-- 右：FAQ -->
+    <div class="contact-faq-col fade-in">
+      <h2 class="contact-faq-title">FAQ</h2>
       <div class="faq-section">
         <div class="faq-item">
           <button class="faq-q">サイズはどのように選べばいいですか？</button>
@@ -102,16 +108,16 @@
           <div class="faq-a"><div class="faq-a-inner">コラボレーションやお取り扱いのご相談を歓迎しております。上記フォームの「コラボレーション」を選択してお問い合わせください。</div></div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- SNSリンク -->
-      <div class="contact-sns">
-        <h3 class="contact-sns-title">FOLLOW US</h3>
-        <div class="contact-sns-links">
-          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" aria-label="LINE"><i class="bi bi-line"></i></a>
-        </div>
-      </div>
+  <!-- SNSリンク -->
+  <div class="contact-sns">
+    <h3 class="contact-sns-title">FOLLOW US</h3>
+    <div class="contact-sns-links">
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" aria-label="LINE"><i class="bi bi-line"></i></a>
     </div>
   </div>
 

@@ -11,7 +11,7 @@
 <body>
 
   <!-- ヘッダー -->
-  <header class="header scrolled" id="header">
+  <header class="header" id="header">
     <a href="index.html" class="header-logo">URBAN CLOSET</a>
     <nav class="header-nav">
       <a href="products.html?filter=new">NEW</a>
@@ -31,8 +31,14 @@
 
   <div class="mobile-menu">
     <button class="mobile-menu-close">&times;</button>
-    <a href="products.html?filter=new">NEW</a><a href="products.html?filter=women">WOMEN</a><a href="products.html?filter=men">MEN</a>
-    <a href="products.html?filter=goods">GOODS</a><a href="story.html">STORY</a><a href="lookbook.html">LOOKBOOK</a><a href="contact.html">CONTACT</a>
+    <a href="index.html">HOME</a>
+    <a href="products.html?filter=new">NEW</a>
+    <a href="products.html?filter=women">WOMEN</a>
+    <a href="products.html?filter=men">MEN</a>
+    <a href="products.html?filter=goods">GOODS</a>
+    <a href="story.html">STORY</a>
+    <a href="lookbook.html">LOOKBOOK</a>
+    <a href="contact.html">CONTACT</a>
   </div>
 
   <!-- 検索バー -->
@@ -240,5 +246,67 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // products.html専用：URLパラメータフィルタリング
+    (function() {
+      function applyFilter() {
+        var params = new URLSearchParams(window.location.search);
+        var filter = params.get('filter');
+        if (!filter) return;
+
+        // 商品カードのフィルタリング
+        var cards = document.querySelectorAll('.product-card');
+        cards.forEach(function(card) {
+          var category = card.getAttribute('data-category');
+          var badge = card.getAttribute('data-badge');
+          var show = false;
+
+          if (filter === 'new') {
+            show = (badge === 'new');
+          } else if (filter === 'women') {
+            show = (category === 'tops' || category === 'bottoms');
+          } else if (filter === 'men') {
+            show = (category === 'outerwear' || category === 'tops');
+          } else if (filter === 'goods') {
+            show = (category === 'accessories');
+          } else {
+            show = true;
+          }
+
+          card.style.display = show ? '' : 'none';
+        });
+
+        // ヒーロー画像・タイトル切替
+        var heroMap = {
+          new:   { img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80', title: 'NEW ARRIVALS', sub: '最新アイテム' },
+          women: { img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&q=80', title: 'WOMEN', sub: 'ウィメンズコレクション' },
+          men:   { img: 'https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=1600&q=80', title: 'MEN', sub: 'メンズコレクション' },
+          goods: { img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=80', title: 'GOODS', sub: 'アクセサリー・グッズ' }
+        };
+
+        if (heroMap[filter]) {
+          var heroImg = document.querySelector('.products-hero-img');
+          var heroTitle = document.querySelector('.products-hero-title');
+          var heroSub = document.querySelector('.products-hero-sub');
+          if (heroImg) heroImg.src = heroMap[filter].img;
+          if (heroTitle) heroTitle.textContent = heroMap[filter].title;
+          if (heroSub) heroSub.textContent = heroMap[filter].sub;
+        }
+
+        // フィルターボタンのactive解除
+        var btns = document.querySelectorAll('.filter-cats button');
+        btns.forEach(function(b) { b.classList.remove('active'); });
+      }
+
+      // DOM読み込み完了時に実行
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', applyFilter);
+      } else {
+        applyFilter();
+      }
+      // 念のためwindow.onloadでも実行
+      window.addEventListener('load', applyFilter);
+    })();
+  </script>
 </body>
 </html>
