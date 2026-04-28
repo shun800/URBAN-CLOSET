@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="URBAN CLOSETへのお問い合わせ。商品・サイズ・コラボレーションなどお気軽にご連絡ください。">
+  <title>CONTACT | URBAN CLOSET</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header scrolled" id="header">
+    <a href="index.html" class="header-logo">URBAN CLOSET</a>
+    <nav class="header-nav">
+      <a href="products.html">NEW</a><a href="products.html">WOMEN</a><a href="products.html">MEN</a>
+      <a href="products.html">GOODS</a><a href="story.html">STORY</a><a href="lookbook.html">LOOKBOOK</a>
+    </nav>
+    <div class="header-icons">
+      <button aria-label="検索">&#x2315;</button>
+      <button aria-label="カート">&#x1F6D2;</button>
+      <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <button class="mobile-menu-close">&times;</button>
+    <a href="products.html">NEW</a><a href="products.html">WOMEN</a><a href="products.html">MEN</a>
+    <a href="products.html">GOODS</a><a href="story.html">STORY</a><a href="lookbook.html">LOOKBOOK</a><a href="contact.html">CONTACT</a>
+  </div>
+
+  <!-- ページタイトル -->
+  <div class="page-title-wrap">
+    <h1 class="page-title fade-in">CONTACT</h1>
+  </div>
+
+  <!-- コンタクトエリア -->
+  <div class="contact-wrap">
+    <!-- 左：フォーム -->
+    <div class="fade-in">
+      <form id="contact-form">
+        <div class="form-group">
+          <label class="form-label" for="name">NAME *</label>
+          <input class="form-input" type="text" id="name" placeholder="お名前">
+          <p class="form-error"></p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">EMAIL *</label>
+          <input class="form-input" type="email" id="email" placeholder="メールアドレス">
+          <p class="form-error"></p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="subject">SUBJECT</label>
+          <select class="form-select" id="subject">
+            <option value="">お問い合わせ種別を選択</option>
+            <option value="product">商品について</option>
+            <option value="size">サイズについて</option>
+            <option value="collab">コラボレーション</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">MESSAGE *</label>
+          <textarea class="form-textarea" id="message" placeholder="お問い合わせ内容" rows="5"></textarea>
+          <p class="form-error"></p>
+        </div>
+        <button type="submit" class="btn-submit">SEND MESSAGE</button>
+      </form>
+    </div>
+
+    <!-- 右：FAQ + SNS -->
+    <div class="fade-in">
+      <h2 class="section-title" style="font-size: clamp(24px, 4vw, 40px); margin-bottom: 32px;">FAQ</h2>
+      <div class="faq-section">
+        <div class="faq-item">
+          <button class="faq-q">サイズはどのように選べばいいですか？</button>
+          <div class="faq-a"><div class="faq-a-inner">各商品ページにサイズガイドをご用意しています。着丈・身幅・肩幅・袖丈を記載していますので、お手持ちのお洋服と比較してお選びください。ご不明な場合はお気軽にお問い合わせください。</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">送料はいくらですか？</button>
+          <div class="faq-a"><div class="faq-a-inner">全国一律550円（税込）でお届けします。10,000円以上のお買い上げで送料無料となります。</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">返品・交換は可能ですか？</button>
+          <div class="faq-a"><div class="faq-a-inner">商品到着後7日以内、未使用・タグ付きの状態であれば返品・交換を承ります。お客様のご都合による返品の場合、送料はお客様のご負担となります。</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">商品の再入荷はありますか？</button>
+          <div class="faq-a"><div class="faq-a-inner">人気商品は随時再入荷を行っております。再入荷時にはニュースレターでお知らせしますので、ぜひご登録ください。</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">コラボレーションやお取り扱いの相談はできますか？</button>
+          <div class="faq-a"><div class="faq-a-inner">コラボレーションやお取り扱いのご相談を歓迎しております。上記フォームの「コラボレーション」を選択してお問い合わせください。</div></div>
+        </div>
+      </div>
+
+      <!-- SNSリンク -->
+      <div class="contact-sns">
+        <h3 class="contact-sns-title">FOLLOW US</h3>
+        <div class="contact-sns-links">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">LINE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h3 class="footer-title">URBAN CLOSET</h3>
+        <p class="footer-text">都市で生きる人の、新しいワードローブ。<br>素材にこだわり、シルエットを磨き、性別や年齢を超えて、あなた自身を表現する服を。</p>
+      </div>
+      <div>
+        <h3 class="footer-title">SHOP</h3>
+        <div class="footer-links"><a href="products.html">All Products</a><a href="products.html">Tops</a><a href="products.html">Bottoms</a><a href="products.html">Outerwear</a><a href="products.html">Accessories</a></div>
+      </div>
+      <div>
+        <h3 class="footer-title">INFO</h3>
+        <div class="footer-links"><a href="story.html">Brand Story</a><a href="lookbook.html">Lookbook</a><a href="contact.html">Contact</a><a href="#">Size Guide</a></div>
+      </div>
+      <div>
+        <h3 class="footer-title">FOLLOW US</h3>
+        <div class="footer-sns"><a href="#">&#9679;</a><a href="#">&#9679;</a><a href="#">&#9679;</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 URBAN CLOSET. All Rights Reserved.</span>
+      <div class="footer-bottom-links"><a href="#">プライバシーポリシー</a><a href="#">特定商取引法</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

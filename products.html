@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="URBAN CLOSET 商品一覧 - ミニマルでモードなアイテムをご覧ください。">
+  <title>PRODUCTS | URBAN CLOSET</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header scrolled" id="header">
+    <a href="index.html" class="header-logo">URBAN CLOSET</a>
+    <nav class="header-nav">
+      <a href="products.html">NEW</a>
+      <a href="products.html">WOMEN</a>
+      <a href="products.html">MEN</a>
+      <a href="products.html">GOODS</a>
+      <a href="story.html">STORY</a>
+      <a href="lookbook.html">LOOKBOOK</a>
+    </nav>
+    <div class="header-icons">
+      <button aria-label="検索">&#x2315;</button>
+      <button aria-label="カート">&#x1F6D2;</button>
+      <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <button class="mobile-menu-close">&times;</button>
+    <a href="products.html">NEW</a><a href="products.html">WOMEN</a><a href="products.html">MEN</a>
+    <a href="products.html">GOODS</a><a href="story.html">STORY</a><a href="lookbook.html">LOOKBOOK</a><a href="contact.html">CONTACT</a>
+  </div>
+
+  <!-- ページタイトル -->
+  <div class="page-title-wrap">
+    <h1 class="page-title fade-in">PRODUCTS</h1>
+  </div>
+
+  <!-- フィルター・ソート -->
+  <div class="filter-bar fade-in">
+    <div class="filter-cats">
+      <button class="active" data-category="ALL">ALL</button>
+      <button data-category="TOPS">TOPS</button>
+      <button data-category="BOTTOMS">BOTTOMS</button>
+      <button data-category="OUTERWEAR">OUTERWEAR</button>
+      <button data-category="ACCESSORIES">ACCESSORIES</button>
+    </div>
+    <select class="sort-select">
+      <option value="new">新着順</option>
+      <option value="price-asc">価格：安い順</option>
+      <option value="price-desc">価格：高い順</option>
+    </select>
+  </div>
+
+  <!-- 商品グリッド -->
+  <div class="product-grid">
+    <!-- 1 -->
+    <a href="product-detail.html" class="product-card" data-category="TOPS" data-price="6500">
+      <div class="product-card-img">
+        <span class="product-badge">NEW</span>
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80" alt="オーバーサイズTシャツ" class="main-img">
+        <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">オーバーサイズTシャツ</p>
+      <p class="product-card-price">¥6,500</p>
+    </a>
+    <!-- 2 -->
+    <a href="product-detail.html" class="product-card" data-category="BOTTOMS" data-price="12000">
+      <div class="product-card-img">
+        <span class="product-badge">NEW</span>
+        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&q=80" alt="ワイドテーパードパンツ" class="main-img">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">ワイドテーパードパンツ</p>
+      <p class="product-card-price">¥12,000</p>
+    </a>
+    <!-- 3 -->
+    <a href="product-detail.html" class="product-card" data-category="TOPS" data-price="9800">
+      <div class="product-card-img">
+        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80" alt="リネンシャツ" class="main-img">
+        <img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">リネンシャツ</p>
+      <p class="product-card-price">¥9,800</p>
+    </a>
+    <!-- 4 -->
+    <a href="product-detail.html" class="product-card" data-category="OUTERWEAR" data-price="18000">
+      <div class="product-card-img">
+        <span class="product-badge">NEW</span>
+        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80" alt="コーチジャケット" class="main-img">
+        <img src="https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">コーチジャケット</p>
+      <p class="product-card-price">¥18,000</p>
+    </a>
+    <!-- 5 -->
+    <a href="product-detail.html" class="product-card" data-category="TOPS" data-price="11000">
+      <div class="product-card-img">
+        <span class="product-badge">RE STOCK</span>
+        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80" alt="クロップドフーディ" class="main-img">
+        <img src="https://images.unsplash.com/photo-1578768079470-f826010b3fbe?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">クロップドフーディ</p>
+      <p class="product-card-price">¥11,000</p>
+    </a>
+    <!-- 6 -->
+    <a href="product-detail.html" class="product-card" data-category="BOTTOMS" data-price="14500">
+      <div class="product-card-img">
+        <span class="product-badge">RE STOCK</span>
+        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&q=80" alt="カーゴパンツ" class="main-img">
+        <img src="https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">カーゴパンツ</p>
+      <p class="product-card-price">¥14,500</p>
+    </a>
+    <!-- 7 -->
+    <a href="product-detail.html" class="product-card" data-category="ACCESSORIES" data-price="5500">
+      <div class="product-card-img">
+        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80" alt="ドローストリングバッグ" class="main-img">
+        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">ドローストリングバッグ</p>
+      <p class="product-card-price">¥5,500</p>
+    </a>
+    <!-- 8 -->
+    <a href="product-detail.html" class="product-card" data-category="OUTERWEAR" data-price="28000">
+      <div class="product-card-img">
+        <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=600&q=80" alt="ステンカラーコート" class="main-img">
+        <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">ステンカラーコート</p>
+      <p class="product-card-price">¥28,000</p>
+    </a>
+    <!-- 9 -->
+    <a href="product-detail.html" class="product-card" data-category="TOPS" data-price="8800">
+      <div class="product-card-img">
+        <span class="product-badge">RE STOCK</span>
+        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80" alt="リブニットベスト" class="main-img">
+        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">リブニットベスト</p>
+      <p class="product-card-price">¥8,800</p>
+    </a>
+    <!-- 10 -->
+    <a href="product-detail.html" class="product-card" data-category="BOTTOMS" data-price="7200">
+      <div class="product-card-img">
+        <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&q=80" alt="ナイロンショーツ" class="main-img">
+        <img src="https://images.unsplash.com/photo-1565084888279-aca5ecc27f34?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">ナイロンショーツ</p>
+      <p class="product-card-price">¥7,200</p>
+    </a>
+    <!-- 11 -->
+    <a href="product-detail.html" class="product-card" data-category="ACCESSORIES" data-price="4800">
+      <div class="product-card-img">
+        <img src="https://images.unsplash.com/photo-1588850561407-ed78c334e67a?w=600&q=80" alt="ロゴキャップ" class="main-img">
+        <img src="https://images.unsplash.com/photo-1534215754734-18e55d13e346?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">ロゴキャップ</p>
+      <p class="product-card-price">¥4,800</p>
+    </a>
+    <!-- 12 -->
+    <a href="product-detail.html" class="product-card" data-category="TOPS" data-price="7800">
+      <div class="product-card-img">
+        <span class="product-badge">RE STOCK</span>
+        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80" alt="レイヤードロンT" class="main-img">
+        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80" alt="" class="hover-img">
+        <div class="quick-view">QUICK VIEW</div>
+      </div>
+      <p class="product-card-name">レイヤードロンT</p>
+      <p class="product-card-price">¥7,800</p>
+    </a>
+  </div>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h3 class="footer-title">URBAN CLOSET</h3>
+        <p class="footer-text">都市で生きる人の、新しいワードローブ。<br>素材にこだわり、シルエットを磨き、性別や年齢を超えて、あなた自身を表現する服を。</p>
+      </div>
+      <div>
+        <h3 class="footer-title">SHOP</h3>
+        <div class="footer-links"><a href="products.html">All Products</a><a href="products.html">Tops</a><a href="products.html">Bottoms</a><a href="products.html">Outerwear</a><a href="products.html">Accessories</a></div>
+      </div>
+      <div>
+        <h3 class="footer-title">INFO</h3>
+        <div class="footer-links"><a href="story.html">Brand Story</a><a href="lookbook.html">Lookbook</a><a href="contact.html">Contact</a><a href="#">Size Guide</a></div>
+      </div>
+      <div>
+        <h3 class="footer-title">FOLLOW US</h3>
+        <div class="footer-sns"><a href="#">&#9679;</a><a href="#">&#9679;</a><a href="#">&#9679;</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 URBAN CLOSET. All Rights Reserved.</span>
+      <div class="footer-bottom-links"><a href="#">プライバシーポリシー</a><a href="#">特定商取引法</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
