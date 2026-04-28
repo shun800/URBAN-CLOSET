@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="URBAN CLOSET - 都市で生きる人の、新しいワードローブ。ミニマル・モード・ジェンダーレスなファッションブランド。">
   <title>URBAN CLOSET | 2025 SPRING / SUMMER</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -43,7 +44,7 @@
 
   <!-- ヒーローセクション -->
   <section class="hero">
-    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1920&q=80')"></div>
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80" alt="Hero" class="hero-bg-img">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 class="hero-title">URBAN<br>CLOSET</h1>
@@ -153,14 +154,19 @@
   <!-- ブランドコンセプト -->
   <section class="concept" data-dark-section>
     <div class="concept-bg-text">URBAN CLOSET</div>
-    <div class="concept-body fade-in">
-      <p class="concept-text">
-        都市で生きる人の、新しいワードローブ。<br>
-        素材にこだわり、シルエットを磨き、<br>
-        性別や年齢を超えて、あなた自身を表現する服を。<br>
-        URBAN CLOSETは、日常に溶け込む一着を提案します。
-      </p>
-      <a href="story.html" class="concept-link">BRAND STORY →</a>
+    <div class="concept-inner fade-in">
+      <div class="concept-body">
+        <p class="concept-text">
+          都市で生きる人の、新しいワードローブ。<br>
+          素材にこだわり、シルエットを磨き、<br>
+          性別や年齢を超えて、あなた自身を表現する服を。<br>
+          URBAN CLOSETは、日常に溶け込む一着を提案します。
+        </p>
+        <a href="story.html" class="concept-link">BRAND STORY →</a>
+      </div>
+      <div class="concept-photo">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80" alt="ブランドコンセプト">
+      </div>
     </div>
   </section>
 
@@ -202,7 +208,7 @@
   <section class="newsletter fade-in">
     <h2 class="newsletter-title">SIGN UP FOR UPDATES</h2>
     <form class="newsletter-form">
-      <input type="email" placeholder="Email Address" required>
+      <input type="email" placeholder="メールアドレスを入力" required>
       <button type="submit">SUBSCRIBE</button>
     </form>
     <p class="newsletter-sub">新作入荷・限定オファーをいち早くお届けします</p>
@@ -237,9 +243,9 @@
       <div>
         <h3 class="footer-title">FOLLOW US</h3>
         <div class="footer-sns">
-          <a href="#" aria-label="Instagram">&#9679;</a>
-          <a href="#" aria-label="Twitter">&#9679;</a>
-          <a href="#" aria-label="LINE">&#9679;</a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="LINE"><i class="bi bi-line"></i></a>
         </div>
       </div>
     </div>
