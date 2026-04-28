@@ -10,31 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const isHomePage = !!document.querySelector('.hero');
 
   if (header && isHomePage) {
-    let scrollTimer;
+    let scrollTimer = null;
 
-    // 最初は透明
-    header.classList.add('transparent');
-
-    window.addEventListener('scroll', () => {
-      // スクロール中は透明
-      header.classList.add('transparent');
-
-      // タイマーリセット
-      clearTimeout(scrollTimer);
-
-      // 止まったら白に戻す
-      scrollTimer = setTimeout(() => {
-        if (window.scrollY > 0) {
-          header.classList.remove('transparent');
-          header.classList.add('scrolled');
-        }
-      }, 300);
-
+    window.addEventListener('scroll', function() {
       // 最上部に戻ったら透明に
       if (window.scrollY === 0) {
         header.classList.remove('scrolled');
-        header.classList.add('transparent');
+        return;
       }
+      // スクロール中は透明（scrolled解除）
+      header.classList.remove('scrolled');
+      // タイマーリセット
+      clearTimeout(scrollTimer);
+      // 止まったら白に戻す（300ms後）
+      scrollTimer = setTimeout(function() {
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+        }
+      }, 300);
     }, { passive: true });
   }
 
@@ -167,61 +160,72 @@ document.addEventListener('DOMContentLoaded', () => {
   const productsHeroTitle = document.querySelector('.products-hero-title');
   const productsHeroSub = document.querySelector('.products-hero-sub');
 
-  // URLパラメータフィルターマップ
-  const filterMap = {
-    new: { categories: null, badge: 'NEW', title: 'NEW ARRIVALS', sub: 'NEW ITEMS',
-      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80' },
-    women: { categories: ['TOPS','BOTTOMS'], title: 'WOMEN', sub: 'WOMEN\'S COLLECTION',
-      img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&q=80' },
-    men: { categories: ['OUTERWEAR','TOPS'], title: 'MEN', sub: 'MEN\'S COLLECTION',
-      img: 'https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=1600&q=80' },
-    goods: { categories: ['ACCESSORIES'], title: 'GOODS', sub: 'GOODS & ACCESSORIES',
-      img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=80' }
+  // ヒーローデータ
+  const heroData = {
+    new: {
+      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80',
+      title: 'NEW ARRIVALS', sub: '最新アイテム'
+    },
+    women: {
+      img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&q=80',
+      title: 'WOMEN', sub: 'ウィメンズコレクション'
+    },
+    men: {
+      img: 'https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=1600&q=80',
+      title: 'MEN', sub: 'メンズコレクション'
+    },
+    goods: {
+      img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=80',
+      title: 'GOODS', sub: 'アクセサリー・グッズ'
+    }
   };
 
   // URLパラメータを読み取り
   const urlParams = new URLSearchParams(window.location.search);
   const filterParam = urlParams.get('filter');
 
-  if (productGrid && filterParam && filterMap[filterParam]) {
-    const config = filterMap[filterParam];
+  if (productGrid) {
     const cards = productGrid.querySelectorAll('.product-card');
 
-    // ヒーロー画像・タイトル切替
-    if (productsHeroImg) {
-      productsHeroImg.style.opacity = '0';
-      setTimeout(() => {
-        productsHeroImg.src = config.img;
-        productsHeroImg.style.opacity = '1';
-      }, 300);
-    }
-    if (productsHeroTitle) productsHeroTitle.textContent = config.title;
-    if (productsHeroSub) productsHeroSub.textContent = config.sub;
-
-    // フィルター実行
-    if (filterParam === 'new') {
-      // NEWバッジがある商品のみ表示
+    // URLパラメータによるフィルター
+    if (filterParam) {
       cards.forEach(card => {
-        const badge = card.querySelector('.product-badge');
-        if (badge && badge.textContent.trim() === 'NEW') {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    } else {
-      // カテゴリーでフィルター
-      cards.forEach(card => {
-        if (config.categories.includes(card.dataset.category)) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
+        const category = card.dataset.category;
+        const badge = card.dataset.badge;
+        let show = false;
 
-    // フィルターボタンのactiveを解除
-    filterBtns.forEach(b => b.classList.remove('active'));
+        if (!filterParam || filterParam === 'all') {
+          show = true;
+        } else if (filterParam === 'new') {
+          show = badge === 'new';
+        } else if (filterParam === 'women') {
+          show = category === 'tops' || category === 'bottoms';
+        } else if (filterParam === 'men') {
+          show = category === 'outerwear' || category === 'tops';
+        } else if (filterParam === 'goods') {
+          show = category === 'accessories';
+        } else {
+          show = category === filterParam;
+        }
+        card.style.display = show ? '' : 'none';
+      });
+
+      // ヒーロー画像・タイトル切替
+      if (heroData[filterParam]) {
+        if (productsHeroImg) {
+          productsHeroImg.style.opacity = '0';
+          setTimeout(() => {
+            productsHeroImg.src = heroData[filterParam].img;
+            productsHeroImg.style.opacity = '1';
+          }, 300);
+        }
+        if (productsHeroTitle) productsHeroTitle.textContent = heroData[filterParam].title;
+        if (productsHeroSub) productsHeroSub.textContent = heroData[filterParam].sub;
+      }
+
+      // フィルターボタンのactiveを解除
+      filterBtns.forEach(b => b.classList.remove('active'));
+    }
   }
 
   if (filterBtns.length && productGrid) {
@@ -229,17 +233,17 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const cat = btn.dataset.category;
+        const cat = btn.dataset.category.toLowerCase();
         const cards = productGrid.querySelectorAll('.product-card');
         cards.forEach(card => {
-          if (cat === 'ALL' || card.dataset.category === cat) {
+          if (cat === 'all' || card.dataset.category === cat) {
             card.style.display = '';
           } else {
             card.style.display = 'none';
           }
         });
         // ALLクリック時はヒーローをデフォルトに戻す
-        if (cat === 'ALL') {
+        if (cat === 'all') {
           if (productsHeroTitle) productsHeroTitle.textContent = 'PRODUCTS';
           if (productsHeroSub) productsHeroSub.textContent = 'ALL ITEMS';
           if (productsHeroImg) {
@@ -249,7 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
               productsHeroImg.style.opacity = '1';
             }, 300);
           }
-          // URLパラメータを削除
           history.replaceState(null, '', 'products.html');
         }
       });

@@ -39,12 +39,13 @@ input, textarea, select { font-family: inherit; }
   background: transparent; color: var(--white);
 }
 .header.scrolled { background: var(--white); color: var(--black); box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
+.header.scrolled .header-logo,
+.header.scrolled .header-nav a,
+.header.scrolled .header-icons button { color: var(--black); }
+.header .header-logo,
+.header .header-nav a,
+.header .header-icons button { color: var(--white); transition: color 0.4s ease; }
 .header.header-dark { background: var(--black); color: var(--white); }
-/* 透明状態（index.htmlスクロール中） */
-.header.transparent { background: transparent !important; color: #FFFFFF !important; box-shadow: none !important; }
-.header.transparent .header-logo,
-.header.transparent .header-nav a,
-.header.transparent .header-icons button { color: #FFFFFF !important; }
 .header-logo {
   font-family: var(--font-en); font-weight: 200; font-size: 18px;
   letter-spacing: 4px; position: relative; padding: 4px 0;
@@ -325,10 +326,10 @@ input, textarea, select { font-family: inherit; }
 }
 .color-swatches { display: flex; gap: 12px; margin-bottom: 32px; }
 .color-swatch {
-  width: 28px; height: 28px; border-radius: 50%;
+  width: 32px; height: 32px; border-radius: 50%;
   border: 2px solid transparent; cursor: pointer; transition: 0.3s;
 }
-.color-swatch.active { border-color: var(--black); }
+.color-swatch.active { outline: 2px solid #0A0A0A; outline-offset: 2px; border-color: transparent; }
 .size-options { display: flex; gap: 8px; margin-bottom: 32px; }
 .size-option {
   width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
