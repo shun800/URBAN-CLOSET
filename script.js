@@ -47,6 +47,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* === 検索バー === */
+  const btnSearch = document.querySelector('.btn-search');
+  const searchBar = document.getElementById('search-bar');
+  const searchInput = document.querySelector('.search-input');
+  const searchClose = document.querySelector('.search-close');
+
+  if (btnSearch && searchBar) {
+    // 検索ボタンでトグル
+    btnSearch.addEventListener('click', () => {
+      searchBar.classList.toggle('active');
+      if (searchBar.classList.contains('active') && searchInput) {
+        searchInput.focus();
+      }
+    });
+    // 閉じるボタン
+    if (searchClose) {
+      searchClose.addEventListener('click', () => {
+        searchBar.classList.remove('active');
+      });
+    }
+    // Enterキーでproducts.htmlへ遷移
+    if (searchInput) {
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          window.location.href = 'products.html';
+        }
+      });
+    }
+  }
+
+  /* === カートパネル === */
+  const btnCart = document.querySelector('.btn-cart-toggle');
+  const cartPanel = document.getElementById('cart-panel');
+  const cartOverlay = document.getElementById('cart-overlay');
+  const cartClose = document.querySelector('.cart-panel-close');
+
+  const openCart = () => {
+    if (cartPanel) cartPanel.classList.add('active');
+    if (cartOverlay) cartOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeCart = () => {
+    if (cartPanel) cartPanel.classList.remove('active');
+    if (cartOverlay) cartOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  if (btnCart) btnCart.addEventListener('click', openCart);
+  if (cartClose) cartClose.addEventListener('click', closeCart);
+  if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
+
   /* === ライトボックス === */
   const lightbox = document.querySelector('.lightbox');
   const lbImg = document.querySelector('.lightbox-img');

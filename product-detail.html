@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="URBAN CLOSET オーバーサイズTシャツ - 都市のリズムに合わせて設計された究極のシルエット。">
   <title>オーバーサイズTシャツ | URBAN CLOSET</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,8 +18,8 @@
       <a href="products.html">GOODS</a><a href="story.html">STORY</a><a href="lookbook.html">LOOKBOOK</a>
     </nav>
     <div class="header-icons">
-      <button aria-label="検索">&#x2315;</button>
-      <button aria-label="カート">&#x1F6D2;</button>
+      <button class="btn-search" aria-label="検索"><i class="bi bi-search"></i></button>
+      <button class="btn-cart-toggle" aria-label="カート"><i class="bi bi-bag"></i></button>
       <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -27,6 +28,14 @@
     <button class="mobile-menu-close">&times;</button>
     <a href="products.html">NEW</a><a href="products.html">WOMEN</a><a href="products.html">MEN</a>
     <a href="products.html">GOODS</a><a href="story.html">STORY</a><a href="lookbook.html">LOOKBOOK</a><a href="contact.html">CONTACT</a>
+  </div>
+
+  <!-- 検索バー -->
+  <div class="search-bar" id="search-bar">
+    <div class="search-bar-inner">
+      <input type="text" class="search-input" placeholder="商品を検索...">
+      <button class="search-close">&times;</button>
+    </div>
   </div>
 
   <!-- 商品詳細 -->
@@ -164,7 +173,7 @@
       </div>
       <div>
         <h3 class="footer-title">FOLLOW US</h3>
-        <div class="footer-sns"><a href="#">&#9679;</a><a href="#">&#9679;</a><a href="#">&#9679;</a></div>
+        <div class="footer-sns"><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a><a href="#" aria-label="LINE"><i class="bi bi-line"></i></a></div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -172,6 +181,19 @@
       <div class="footer-bottom-links"><a href="#">プライバシーポリシー</a><a href="#">特定商取引法</a></div>
     </div>
   </footer>
+
+  <!-- カートパネル -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-panel" id="cart-panel">
+    <div class="cart-panel-header">
+      <h3>CART</h3>
+      <button class="cart-panel-close">&times;</button>
+    </div>
+    <div class="cart-panel-body">
+      <p class="cart-empty-msg">カートは空です</p>
+      <a href="products.html" class="cart-continue-btn">ショッピングを続ける</a>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
